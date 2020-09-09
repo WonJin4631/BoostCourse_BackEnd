@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.won.boostweb.mvcweb.controller" })
+@ComponentScan(basePackages = { "com.won.boostweb.mvcweb.controller","com.won.boostweb.mvcweb.guestbook.controller" })
 public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
