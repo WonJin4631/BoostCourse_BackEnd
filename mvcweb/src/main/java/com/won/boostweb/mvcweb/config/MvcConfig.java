@@ -18,7 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableWebMvc
 @EnableSwagger2
-@ComponentScan(basePackages = { "com.won.boostweb.mvcweb.controller" })
+@ComponentScan(basePackages = { "com.won.boostweb.mvcweb.controller","com.won.boostweb.mvcweb.guestbook.controller" })
 public class MvcConfig implements WebMvcConfigurer {
 	
 	// DefaultServlet에 대한 설정을 합니다.

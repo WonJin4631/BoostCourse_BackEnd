@@ -12,8 +12,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>com.won.boostweb.mvcweb.config.ApplicationConfig
-		</param-value>
+		<param-value>com.won.boostweb.mvcweb.config.ApplicationConfig</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

@@ -1,4 +1,4 @@
-package com.won.boostweb.mvcweb.guestbook.controller;
+package com.won.boostweb3.mvcexam.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.won.boostweb.mvcweb.dto.Guestbook;
-import com.won.boostweb.mvcweb.service.GuestbookService;
+import com.won.boostweb3.mvcexam.dto.Guestbook;
+import com.won.boostweb3.mvcexam.service.GuestbookService;
 
 @Controller
 public class GuestbookController {
