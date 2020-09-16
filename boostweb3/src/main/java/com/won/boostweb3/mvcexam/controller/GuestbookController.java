@@ -26,7 +26,7 @@ public class GuestbookController {
 
 	@GetMapping(path = "/list")
 	public String list(@RequestParam(name = "start", required = false, defaultValue = "0") int start, ModelMap model,
-			@CookieValue(value = "count", defaultValue = "1", required = true) String value,
+			@CookieValue(value = "count", defaultValue = "0", required = true) String value,
 			HttpServletResponse response) {
 		// 쿠키 값을 1증가 시킨다.
 		try {
@@ -63,7 +63,7 @@ public class GuestbookController {
 		model.addAttribute("list", list);
 		model.addAttribute("count", count);
 		model.addAttribute("pageStartList", pageStartList);
-
+		model.addAttribute("cookieCount",value);
 		return "list";
 	}
 
