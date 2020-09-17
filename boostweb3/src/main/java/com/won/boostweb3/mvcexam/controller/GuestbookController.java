@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.won.boostweb3.mvcexam.dto.Guestbook;
 import com.won.boostweb3.mvcexam.service.GuestbookService;
@@ -63,7 +65,7 @@ public class GuestbookController {
 		model.addAttribute("list", list);
 		model.addAttribute("count", count);
 		model.addAttribute("pageStartList", pageStartList);
-		model.addAttribute("cookieCount",value);
+		model.addAttribute("cookieCount", value);
 		return "list";
 	}
 
@@ -74,6 +76,18 @@ public class GuestbookController {
 		System.out.println("clientIp : " + clientIp);
 		guestbookService.addGuestbook(guestbook, clientIp);
 
+		return "redirect:list";
+	}
+
+	@GetMapping(path = "/delete")
+	public String delete(@RequestParam(name = "id", required = true) Long id,
+			@SessionAttribute("isAdmin") String isAdmin, HttpServletRequest request, RedirectAttributes redirectAttr) {
+		if (isAdmin == null || !"true".equals(isAdmin)) { // 세션값이 true가 아닐 경우
+			redirectAttr.addFlashAttribute("errorMessage", "로그인을 하지 않았습니다.");
+			return "redirect:loginform";
+		}
+		String clientIp = request.getRemoteAddr();
+		guestbookService.deleteGuestbook(id, clientIp);
 		return "redirect:list";
 	}
 }
