@@ -5,7 +5,7 @@ import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"org.edwith.webbe.securityexam.controller"})
+@ComponentScan(basePackages = {"com.won.boostweb4.securityexam.controller"})
 public class MvcConfig implements WebMvcConfigurer {
 
 	// default servlet 핸들러를 설정한다.

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 // dao, service를 컴포넌트 스캔하여 찾도록 한다.
 // 어노테이션으로 트랜잭션을 관리하기 위해 @EnableTransactionManagement를 설정하였다.
 @Configuration
-@ComponentScan(basePackages = {"org.edwith.webbe.securityexam.dao", "org.edwith.webbe.securityexam.service"})
+@ComponentScan(basePackages = {"com.won.boostweb4.securityexam.dao", "com.won.boostweb4.securityexam.service"})
 public class ApplicationConfig{
 
 }
